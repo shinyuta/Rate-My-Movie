@@ -1,0 +1,89 @@
+:root {
+    --Main: #5A5A5A;
+    --offwhite: #FAF9F6;
+    --white: white;
+    --light: rgb(189, 189, 189);
+  }
+
+* {
+    margin: 0, auto;
+    padding: 0;
+}
+
+#titlelogo {
+    color: var(--white);
+    padding-left: 20px;
+}
+
+ul li {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+li a, li a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.searchbar {
+    color: var(--white);
+    padding-right: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--Main);
+}
+
+/* h1 {
+    /* padding-bottom: 20px; 
+}  */
+
+footer {
+    padding-top: 15px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--Main);
+    color: var(--white);
+    text-align: center;
+    border-top: 8px solid var(--light);
+}
+
+li {
+    display: inline;
+    text-align: left;
+}
+
+img {
+    box-sizing: border-box;
+}
+
+.About-Us {
+    max-height: 150px;
+    max-width: 100px;
+}
+
+#footerlist li {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.container {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+/* .img {
+
+} */
+
+.text {
+    /* font-size */
+    padding-left: 70px;
+}

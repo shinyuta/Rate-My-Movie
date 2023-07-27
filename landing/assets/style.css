@@ -42,6 +42,7 @@ header {
 }  */
 
 footer {
+    padding-top: 15px;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -64,6 +65,11 @@ img {
 .About-Us {
     max-height: 150px;
     max-width: 100px;
+}
+
+#footerlist li {
+    padding-left:10px;
+    padding-right:10px;
 }
 
 .container {
