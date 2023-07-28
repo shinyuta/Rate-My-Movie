@@ -8,17 +8,26 @@
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <h1 id = "titlelogo">Title</h1>
         <nav class = "searchBar">
             <ul>
                 <li> <a href="../landing/landing.html">Home</a></li>
                 <li> <a href="../newsletter/newsletter.html">Newsletter</a></li>
-                <li> <a href="link">Search</a></li>
-                <!-- Search bar should be a universal search engine for the page  -->
             </ul>
         </nav>
-    </header>
+    </header> -->
+
+    <div class="topnav">
+        <a class="active" href="../landing/landing.html">Home</a>
+        <a href="../newsletter/newsletter.html">Newsletter</a>
+        <div class="search-container">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
 
     <div class = "container">
         <div class = "img">
