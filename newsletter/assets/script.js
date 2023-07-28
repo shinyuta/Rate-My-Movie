@@ -15,3 +15,5 @@ window.onclick = function(event) {
     }
   }
 }
+
+// added comment
