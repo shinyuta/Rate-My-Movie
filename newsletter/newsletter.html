@@ -1,4 +1,5 @@
 <html lang="en">
+    <!-- added comment -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,38 +9,55 @@
 </head>
 
 <body>
-    <!-- <header>
-        <h1 id = "titlelogo">Title</h1>
-        <nav class = "searchBar">
-            <ul>
-                <li> <a href="../landing/landing.html">Home</a></li>
-                <li> <a href="../newsletter/newsletter.html">Newsletter</a></li>
-            </ul>
-        </nav>
-    </header> -->
-
     <div class="topnav">
-        <a class="active" href="../landing/landing.html">Home</a>
-        <a href="../newsletter/newsletter.html">Newsletter</a>
+        <a href="../landing/landing.html">Home</a>
+        <a class="active" href="../newsletter/newsletter.html">Newsletter</a>
         <div class="search-container">
           <form action="/action_page.php">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit">Submit</button>
           </form>
         </div>
-      </div>
-
-    <div class = "container">
-        <div class = "img">
-            <img class = "About-Us" src = "Assets/Images/placeholder.png">
-        </div>
-        <div class = "text">
-            <h3>About us</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum accusamus obcaecati cum placeat expedita facere exercitationem aliquid cupiditate nemo? Ullam qui fuga, minima in ea nobis recusandae necessitatibus unde ratione.</p>
+    </div>
+    
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </div>
     </div>
 
-<link src="Assets/script.js">  
+    <div class = "container">
+        <div class = "img">
+            <img class = "About-Us" src = "Assets/Images/thisweek_107319.png">
+        </div>
+        <div class = "thisWeek">
+            <h3>The current week (7/24/23 - 7/30/23)</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum accusamus obcaecati cum placeat expedita facere exercitationem aliquid cupiditate nemo? Ullam qui fuga, minima in ea nobis recusandae necessitatibus unde ratione.</p>
+        </div>
+    </div>
+    
+    <div class = "container">
+        <div class = "top10">
+            <h3>Top 10 Movies for the week</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum accusamus obcaecati cum placeat expedita facere exercitationem aliquid cupiditate nemo? Ullam qui fuga, minima in ea nobis recusandae necessitatibus unde ratione.</p>
+        </div>
+        <div class = "img">
+            <img class = "About-Us" src = "Assets/Images/istockphoto-1254360596-170667a.webp">
+        </div>
+    </div>
+
+    <div class = "container">
+        <div class = "img">
+            <img class = "About-Us" src = "Assets/images/coming-soon-01.jpeg">
+        </div>
+        <div class = "upcomingMovies">
+            <h3>Upcoming movies to lookout for</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum accusamus obcaecati cum placeat expedita facere exercitationem aliquid cupiditate nemo? Ullam qui fuga, minima in ea nobis recusandae necessitatibus unde ratione.</p>
+        </div>
+    </div>
 
 </body>
     <footer>
@@ -60,4 +78,6 @@
         <!-- Name of the complany and the copyright -->
         </div>
     </footer>
+    <script src="./assets/script.js"></script>
+
 </html>
