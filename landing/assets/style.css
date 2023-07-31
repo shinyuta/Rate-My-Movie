@@ -11,6 +11,12 @@
     box-sizing: border-box;
 }
 
+body {
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
+}
+  
 /* removed titlelogo but will probably reuse */
 #titlelogo {
     color: var(--white);
@@ -104,6 +110,13 @@ img {
     font-size: 17px;
     border: none;
     
+}
+
+.search {
+    border: 2px solid var(--Main);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin-right:20px;
 }
   
 .topnav .search-container button {

@@ -1,4 +1,5 @@
 <html lang="en">
+    <!-- added comment -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,66 +9,131 @@
 </head>
 
 <body>
-    <header>
-        <h1 id = "titlelogo">Title</h1>
-        <nav class = "searchBar">
-            <ul>
-                <li> <a href="link">Home</a></li>
-                <li> <a href="link">Newsletter</a></li>
-                <li> <a href="link">Search</a></li>
-                <!-- Search bar should be a universal search engine for the page  -->
-            </ul>
-        </nav>
-    </header>
-
-    <div class = "container">
-        <div class = "img">
-            <img class = "About-Us" src = "Assets/Images/placeholder.png">
+    <div class="topnav">
+        <a href="../landing/landing.html">Home</a>
+        <a href="../newsletter/newsletter.html">Newsletter</a>
+        <a class="active" href="../searchpage/searchpage.html">Search</a>
+        
+        <div class = "imagediv">
+          <!-- <img id = 'logo' src = "../landing/assets/images/Logo.png"> -->
         </div>
-        <div class = "text">
-            <h3>Newsletter for [week]</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum accusamus obcaecati cum placeat expedita facere exercitationem aliquid cupiditate nemo? Ullam qui fuga, minima in ea nobis recusandae necessitatibus unde ratione.</p>
+
+        <div class="search-container">
+          <form id = 'form' action="../searchpage/searchpage.html"> 
+            <!-- action="/action_page.php" -->
+            <input type = 'text' placeholder="Search..." id="search"
+            class="search" name="search">
+            <!-- <button type="button" id="button" onclick="buttonclick()">Submit</button> -->
+            <!-- <button type="submit" id="button"><i class="fa fa-search"></i></button> -->
+          </form>
         </div>
     </div>
 
-    <div class = "container">
-        <div class = "textmiddle">
-            <h3>Newsletter for [week]</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum accusamus obcaecati cum placeat expedita facere exercitationem aliquid cupiditate nemo? Ullam qui fuga, minima in ea nobis recusandae necessitatibus unde ratione.</p>
-        </div>
-        <div class = "img">
-            <img class = "About-Us" src = "Assets/Images/placeholder.png">
-        </div>
+    <div id="filterbutton" onclick="hidebutton()">
+      filters
     </div>
 
-    <div class = "container">
-        <div class = "img">
-            <img class = "About-Us" src = "Assets/Images/placeholder.png">
-        </div>
-        <div class = "text">
-            <h3>Newsletter for [week]</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum accusamus obcaecati cum placeat expedita facere exercitationem aliquid cupiditate nemo? Ullam qui fuga, minima in ea nobis recusandae necessitatibus unde ratione.</p>
-        </div>
+    <div id="tags">
+      <div class="tag">Action</div>
+      <div class="tag">Adventure</div>
+      <div class="tag">Drama</div>
+      <div class="tag">Comedy</div>
     </div>
-<link src="Assets/script.js">  
 
-</body>
+    <main id="main">
+
+      <div class="movie">
+        <img src = "https://thumbs.dreamstime.com/b/
+        movie-slate-film-reel-wood-clapper-wooden-backgorund-36502412.jpg" alt = "image">
+
+        <div class="movie-info">
+          <h3>Movie Title</h3>
+          <span class="green">9.8</span>
+        </div>
+
+        <div class="overview">
+          <h3>Overview</h3>
+          Lorem ipsum dolor sit amet consectetur 
+          adipisicing elit. Impedit, beatae ipsum. 
+          Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
+        </div>
+      </div>
+
+      <div class="movie">
+        <img src = "https://thumbs.dreamstime.com/b/
+        movie-slate-film-reel-wood-clapper-wooden-backgorund-36502412.jpg" alt = "image">
+
+        <div class="movie-info">
+          <h3>Movie Title</h3>
+          <span class="green">9.8</span>
+        </div>
+
+        <div class="overview">
+
+          <h3>Overview</h3>
+          Lorem ipsum dolor sit amet consectetur 
+          adipisicing elit. Impedit, beatae ipsum. 
+          Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
+        </div>
+      </div>
+
+      <div class="movie">
+        <img src = "https://thumbs.dreamstime.com/b/
+        movie-slate-film-reel-wood-clapper-wooden-backgorund-36502412.jpg" alt = "image">
+
+        <div class="movie-info">
+          <h3>Movie Title</h3>
+          <span class="green">9.8</span>
+        </div>
+
+        <div class="overview">
+          <h3>Overview</h3>
+          Lorem ipsum dolor sit amet consectetur 
+          adipisicing elit. Impedit, beatae ipsum. 
+          Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
+        </div>
+      </div>
+      
+      <div class="movie">
+        <img src = "https://thumbs.dreamstime.com/b/
+        movie-slate-film-reel-wood-clapper-wooden-backgorund-36502412.jpg" alt = "image">
+
+        <div class="movie-info">
+          <h3>Movie Title</h3>
+          <span class="green">9.8</span>
+        </div>
+
+        <div class="overview">
+          <h3>Overview</h3>
+          Lorem ipsum dolor sit amet consectetur 
+          adipisicing elit. Impedit, beatae ipsum. 
+          Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
+        </div>
+      </div>
+
+    </main>
+
     <footer>
-        <div id = "Links">
-            <!-- <p>Links</p>
-            We want a contact list w socials and email/PN -->
-            <ul id = "footerlist">
-                <li> <a href="link">number</a></li>
-                <!-- This will just be a hyperlink button -->
-                <li> <a href="link">email</a></li>
-                <!-- This will jus be a hyperlink button -->
-                <li> <a href="link">location</a></li>
-                <!-- Search bar should be a universal search engine for the page  -->
-            </ul>
-        </div>
-        <div id = "LogoCopy"></div>
-            <p>name™</p>
-        <!-- Name of the complany and the copyright -->
-        </div>
+      <div id="Links">
+          <!-- <p>Links</p>
+              We want a contact list w socials and email/PN -->
+              <ul id = "footerlist">
+                  <li> <a href="link">Feedback</a></li>
+                  <!-- This is a link to email us  -->
+                  <li><a href="mailto:ratemymoviee@gmail.com">Send an Email</a></li>
+                  <!-- This is a google maps link for search capabilities in locating a theater nearby for the user -->
+                  <li><a href="https://www.google.com/maps/" target="_blank">Find a Theater</a></li>
+                  <!-- Search bar should be a universal search engine for the page  -->
+              </ul>
+          </div>
+          <div id = "LogoCopy"></div>
+              <p>RateMyMovie™</p>
+      <!-- Name of the complany and the copyright -->
+      </div>
     </footer>
+
+  <script src="./assets/script.js"></script>
+</body>
+
 </html>
+
