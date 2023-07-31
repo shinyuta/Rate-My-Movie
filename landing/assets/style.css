@@ -11,6 +11,12 @@
     box-sizing: border-box;
 }
 
+body {
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
+}
+  
 /* removed titlelogo but will probably reuse */
 #titlelogo {
     color: var(--white);
@@ -106,8 +112,7 @@ img {
     border: none;
     
 }
- 
-/* Fix the unwanted white border around search button */
+  
 .topnav .search-container button {
     float: right;
     padding: 6px;

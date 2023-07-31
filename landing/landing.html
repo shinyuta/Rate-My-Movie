@@ -21,13 +21,19 @@
     <div class="topnav">
         <a class="active" href="../landing/landing.html">Home</a>
         <a href="../newsletter/newsletter.html">Newsletter</a>
+        <a href="../searchpage/searchpage.html">Search</a>
+
         <div class="search-container">
-          <form action="/action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit">Submit</button>
+          <form id = 'form' action="../searchpage/searchpage.html"> 
+            <!-- action="/action_page.php" -->
+            <input type = 'text' placeholder="Search..." id="search"
+            class="search" name="search">
+            <!-- <button type="button" id="button" onclick="buttonclick()">Submit</button> -->
+            <!-- <button type="submit" id="button"><i class="fa fa-search"></i></button> -->
           </form>
         </div>
-      </div>
+    </div>
+
 
     <div class = "container">
         <div class = "img">
@@ -39,9 +45,7 @@
         </div>
     </div>
 
-<link src="Assets/script.js">  
-
-</body>
+    <link src="Assets/script.js">  
     <footer>
         <div id = "Links">
             <!-- <p>Links</p>
@@ -61,4 +65,6 @@
         <!-- Name of the complany and the copyright -->
         </div>
     </footer>
+</body>
+
 </html>
