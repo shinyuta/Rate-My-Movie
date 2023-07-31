@@ -22,6 +22,7 @@ ul li {
     padding-right:10px;
 }
 
+/* Try and fix the responsive layout for the footer on the newsletter page */
 footer {
     padding-top: 15px;
     position: fixed;
@@ -105,7 +106,8 @@ img {
     border: none;
     
 }
-  
+ 
+/* Fix the unwanted white border around search button */
 .topnav .search-container button {
     float: right;
     padding: 6px;
