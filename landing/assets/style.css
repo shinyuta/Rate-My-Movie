@@ -100,7 +100,7 @@ img {
 @media all and (max-width: 824px) {
     .container .About-Us { display: none; }
     .container .text {padding-left: 0px; }
-  }
+}
 
 .topnav {
     overflow: hidden;
@@ -130,6 +130,7 @@ img {
   
 .topnav .search-container {
     float: right;
+    margin-right: 20px;
 }
   
 .topnav input[type=text] {
@@ -150,33 +151,53 @@ img {
     border: none;
     cursor: pointer;
 }
-  
-.topnav .search-container button:hover {
-    background: #ccc;
-}
-  
-@media screen and (max-width: 600px) {
-    .topnav .search-container {
-      float: none;
-}
-    
-.topnav a, .topnav input[type=text], .topnav .search-container button {
-      float: none;
-      display: block;
-      text-align: left;
-      width: 100%;
-      margin: 0;
-      padding: 14px;
-}
-  
-.topnav input[type=text] {
-      border: 1px solid #ccc;  
-}
 
 .search {
     border: 2px solid var(--Main);
     padding: 0.5rem 1rem;
     border-radius: 8px;
+}
+
+  
+.topnav .search-container button:hover {
+    background: #ccc;
+}
+
+/* .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+} */
+
+.topnav input[type=text] {
+    border: 1px solid #ccc;  
+}
+
+.github {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a, .topnav input[type=text], .topnav .search-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    .search-container {
+        width: 90%;
+    }
+}
+
+.topnav input[type=text] {
+      border: 1px solid #ccc;  
 }
 
 .github {
