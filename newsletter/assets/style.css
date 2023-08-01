@@ -64,6 +64,10 @@ img {
 
 }
 
+#newsletterBox {
+    margin: 8px 0;
+}
+
 #footerlist li {
     padding-left:10px;
     padding-right:10px;
@@ -123,6 +127,7 @@ img {
   
 .topnav .search-container {
     float: right;
+    margin-right: 20px;
 }
   
 .topnav input[type=text] {
@@ -130,15 +135,15 @@ img {
     margin-top: 8px;
     font-size: 17px;
     border: none;
-    
 }
 
 .search {
   border: 2px solid var(--Main);
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  margin-right:20px;
 }
+
+
 
 /* Fix the unwanted white border around search button */ 
 .topnav .search-container button {
@@ -233,10 +238,12 @@ img {
   
   /* Add some padding and a grey background color to containers */
   .containerNews {
-    padding: 20px;
+    padding: 10px;
     background-color: grey;
     align-items: center;
     justify-content: center;
+    border-radius: 4px;
+    
     /* display: flex;
     flex-wrap: wrap; */
   }
@@ -245,15 +252,17 @@ img {
   input[type=text], input[type=submit] {
     width: 100%;
     padding: 12px;
-    margin: 8px 0;
+    /* margin: 0px 0; */
     display: inline-block;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     box-sizing: border-box;
+    
   }
   
   /* Add margins to the checkbox */
   input[type=checkbox] {
-    margin-top: 16px;
+    margin-top: 15px;
+    
   }
   
   /* Style the submit button */
@@ -266,3 +275,7 @@ img {
   input[type=submit]:hover {
     opacity: 0.8;
   }
+
+  
+
+  

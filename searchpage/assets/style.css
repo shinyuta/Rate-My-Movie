@@ -128,6 +128,7 @@ img {
   
 .topnav .search-container {
     float: right;
+    margin-right: 20px;
 }
   
 .topnav input[type=text] {
@@ -135,14 +136,12 @@ img {
     margin-top: 8px;
     font-size: 17px;
     border: none;
-    
 }
 
 .search {
     border: 2px solid var(--Main);
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    margin-right:20px;
 }
   
 .topnav .search-container button {

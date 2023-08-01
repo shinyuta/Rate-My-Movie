@@ -167,17 +167,16 @@ img {
       width: 100%;
       margin: 0;
       padding: 14px;
-    }
-    .topnav input[type=text] {
+}
+  
+.topnav input[type=text] {
       border: 1px solid #ccc;  
-    }
-}  
+}
 
 .search {
     border: 2px solid var(--Main);
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    margin-right:20px;
 }
 
 .github {
