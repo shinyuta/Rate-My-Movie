@@ -47,18 +47,20 @@ footer {
     border-top: 8px solid var(--light);
 }
 
-/* .imagediv {
-    width:100%;
+.imagediv {
+    width: 100%;
     text-align:center;
+    position: absolute;
+    pointer-events: none; 
 }
 
 #logo {
-    position:relative;
-    height: 65px;
-    width: 209px;
-    display:inline-block;
-    margin: 0 auto;
-} */
+    text-align: center;
+} 
+
+@media all and (max-width: 824px) {
+  .imagediv { display: none; }
+}
 
 img {
     box-sizing: border-box;
