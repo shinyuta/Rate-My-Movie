@@ -1,8 +1,9 @@
+// this is the dropdown button funtion
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
   
-  // Close the dropdown menu if the user clicks outside of it
+  // This will close the dropdown menu if the user clicks outside of it 
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
       var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -15,5 +16,3 @@ window.onclick = function(event) {
     }
   }
 }
-
-// added comment
