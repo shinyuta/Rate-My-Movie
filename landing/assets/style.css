@@ -115,7 +115,8 @@ img {
 }
 
 .text-list {
-    padding-left: 120px;
+    padding-top: 10px;
+    padding-left: 20px;
     align-items: center;
 }
 
@@ -238,6 +239,19 @@ img {
     color: var(--light);
 }
 
+.week {
+    text-decoration: none;
+    font-size: 80%;
+    font-weight: bold;
+    background-color: var(--Main);
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    text-align: center;  
+    color: var(--offwhite);
+}
+
 @media screen and (max-width: 600px) {
 
     .topnav a,
@@ -287,3 +301,4 @@ ol li::before {
     /* font-family: 'Abril Fatface', serif; */
     line-height: 1;
 }
+
