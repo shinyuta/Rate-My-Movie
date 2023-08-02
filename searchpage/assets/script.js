@@ -1,6 +1,5 @@
 //ORIGINAL API
 
-
 // async function titleAKA() {
               
 //   const title = document.getElementById("titleGet").value;
