@@ -1,5 +1,4 @@
 <html lang="en">
-<!-- added comment -->
 
 <head>
     <meta charset="UTF-8">
@@ -15,19 +14,13 @@
         <a href="../landing/landing.html">Home</a>
         <a class="active" href="../newsletter/newsletter.html">Newsletter</a>
         <a href="../searchpage/searchpage.html">Search</a>
-<!-- 
-        id = "searchBox" -->
-        <div  class="search-container"> 
-          <form id = 'form' action="../searchpage/searchpage.html"> 
-            <!-- action="/action_page.php" -->
-            <input type = 'text' placeholder="Search..." id="search"
-            class="search" name="search">
-            <!-- <button type="button" id="button" onclick="buttonclick()">Submit</button> -->
-            <!-- <button type="submit" id="button"><i class="fa fa-search"></i></button> -->
-          </form>
+
+        <div class="search-container">
+            <form id='form' action="../searchpage/searchpage.html">
+                <input type='text' placeholder="Search..." id="search" class="search" name="search">
+            </form>
         </div>
     </div>
-
 
     <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Dropdown</button>
@@ -42,7 +35,7 @@
         <div class="img">
             <img class="About-Us" src="Assets/Images/thisweek_107319.png">
         </div>
-        <div class="text">
+        <!-- <div class="text"> -->
             <h3>The current week (7/24/23 - 7/30/23)</h3>
             <p>This week we are foucsing our efforts towards two very well directed films. It only feels right that they
                 are both notably mentioned together. With that being said If you haven't heard already The new 'Barbie'
@@ -53,32 +46,36 @@
     </div>
 
     <div class="container">
-        <div class="textmiddle">
-            <h3>Top 10 Movies for the week</h3>
-            <ol>
-                <li>Barbie</li>
-                <li>Oppenheimer</li>
-                <li>Zombieland</li>
-                <li>Alpha Dog</li>
-                <li>Lords of Dogtown</li>
-                <li>Office Space</li>
-                <li>Mean Girls</li>
-                <li>Ace Ventura: Pet Detective</li>
-                <li>The Big Lebowski</li>
-                <li>Grandma's Boy</li>
-            </ol>
-            <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum accusamus obcaecati cum placeat expedita facere exercitationem aliquid cupiditate nemo? Ullam qui fuga, minima in ea nobis recusandae necessitatibus unde ratione.</p> -->
-        </div>
         <div class="img">
             <img class="About-Us" src="Assets/Images/istockphoto-1254360596-170667a.webp">
         </div>
+        <!-- <div class="textmiddle"> -->
+            <h3>Top 10 Movies for the week</h3>
+            
+                <ol>
+                    <li>Barbie</li>
+                    <li>Oppenheimer</li>
+                    <li>Zombieland</li>
+                    <li>Alpha Dog</li>
+                    <li>Lords of Dogtown</li>
+                    <li>Office Space</li>
+                    <li>Mean Girls</li>
+                    <li>Ace Ventura: Pet Detective</li>
+                    <li>The Big Lebowski</li>
+                    <li>Grandma's Boy</li>
+                </ol>
+        </div>
+
+        <!-- <div class="img">
+            <img class="About-Us" src="Assets/Images/istockphoto-1254360596-170667a.webp">
+        </div> -->
     </div>
 
     <div class="container">
         <div class="img">
             <img class="About-Us" src="Assets/images/coming-soon-01.jpeg">
         </div>
-        <div class="text">
+        <!-- <div class="text"> -->
             <h3>Upcoming movies to lookout for</h3>
             <p>With two phenomenal movies out at the same time, It's going to take some great production and advertising
                 to top this weeks stance in cinema. Yet there may be some contenders after all, as a new Willy Wonka
@@ -86,47 +83,44 @@
                 forthcoming as the 4th sequel to the original. Some other mentionable features are another Exorcist,
                 couple Marvel Sequels, Haunted Mansion, and quite a few more family/action/horror films. </p>
         </div>
-        
-        <!-- Need to properly format this newsletter card/button -->
-            <div class="text">
-                <form class = "formNews" action="action_page.php">
-                    <div class="containerNews">
-                        <h4>Subscribe to our Newsletter</h4>
-                        <p>Easily keep up to date with whats to come each week</p>
 
-                    </div>
-                    <div class="container" style="background-color:white">
-                        <input type="text" placeholder="Name" name="name" required>
-                        <input type="text" placeholder="Email address" name="mail" required>
-                        <label><div id = "newsletterBox" class="containerNews">
-                            <input type="checkbox" checked="checked" name="subscribe"> Weekly Newsletter
-                        </label>
-                    </div>
+        <div>
+            <form class="formNews" action="action_page.php">
+                <div class="containerNews">
+                    <h4>Subscribe to our Weekly Newsletter!</h4>
+                    <p>Easily keep up to date with what the new week holds insight</p>
 
-                    <div class="containerNews">
-                        <input type="submit" value="Subscribe">
-                    </div>
-                </form>
-            </div>
-
-            <footer>
-                <div id="Links">
-                    <!-- <p>Links</p>
-                        We want a contact list w socials and email/PN -->
-                        <ul id = "footerlist">
-                            <li> <a href="link">Feedback</a></li>
-                            <!-- This is a link to email us  -->
-                            <li><a href="mailto:ratemymoviee@gmail.com">Send email</a></li>
-                            <!-- This is a google maps link for search capabilities in locating a theater nearby for the user -->
-                            <li><a href="https://www.google.com/maps/" target="_blank">Find Theater</a></li>
-                            <!-- Search bar should be a universal search engine for the page  -->
-                        </ul>
-                    </div>
-                    <div id = "LogoCopy"></div>
-                        <p>RateMyMovie™</p>
-                <!-- Name of the complany and the copyright -->
                 </div>
-            </footer>
+                <div class="containerNews style="background-color:white">
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="text" placeholder="Email address" name="mail" required>
+                    <label>
+                        <div id="newsletterBox" class="containerNews">
+                            <input type="checkbox" checked="checked" name="subscribe"> Weekly Newsletter
+                    </label>
+                </div>
+
+                <div class="containerNews">
+                    <input type="submit" value="Subscribe">
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <div id="Links">
+                <ul id="footerlist">
+                    <li> <a href="link">Feedback</a></li>
+                    <!-- This is a link to email us  -->
+                    <li><a href="mailto:ratemymoviee@gmail.com">Send email</a></li>
+                    <!-- This is a google maps link for search capabilities in locating a theater nearby for the user -->
+                    <li><a href="https://www.google.com/maps/" target="_blank">Find Theater</a></li>
+                </ul>
+            </div>
+            <div id="LogoCopy"></div>
+            <p>RateMyMovie™</p>
+            <!-- Name of the company and the copyright tag -->
+    </div>
+    </footer>
 
 </body>
 
