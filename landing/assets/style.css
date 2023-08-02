@@ -302,3 +302,64 @@ ol li::before {
     line-height: 1;
 }
 
+.formNews {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+    margin-left: 115px;
+    margin-right: 100px;
+    border: 8px solid var(--light);
+    border-radius: 20px;
+    
+    
+}
+
+.containerNews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    /* background-color: grey; */
+}
+
+input[type=text],
+input[type=submit] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid var(--light);
+    box-sizing: border-box;
+    border-radius: px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+input[type=checkbox] {
+    margin-top: 15px;
+
+}
+
+input[type=submit] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Main);
+    color: white;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+input[type=submit]:hover {
+    opacity: 0.8;
+}
