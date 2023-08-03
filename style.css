@@ -17,7 +17,6 @@ body {
     clear: both;
 }
 
-/* removed titlelogo but will probably reuse */
 #titlelogo {
     color: var(--white);
     padding-left: 20px;
@@ -28,7 +27,6 @@ ul li {
     padding-right: 10px;
 }
 
-/* Try and fix the responsive layout for the footer on the newsletter page */
 footer {
     padding-top: 15px;
     position: fixed;
@@ -70,16 +68,6 @@ img {
     border-radius: 30px;
 }
 
-/* .list-div {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
-}
-
-.ol-movie {
-    width: 50%;
-} */
 
 #footerlist li {
     padding-left: 10px;
@@ -172,7 +160,6 @@ img {
     border: none;
 }
 
-/* Fix the unwanted white border around search button */
 .topnav .search-container button {
     float: right;
     padding: 6px;
@@ -195,14 +182,6 @@ img {
     background: #ccc;
 }
 
-/* .topnav a, .topnav input[type=text], .topnav .search-container button {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-} */
 
 .topnav input[type=text] {
     border: 1px solid #ccc;
@@ -309,8 +288,6 @@ ol li::before {
     justify-content: center;
     align-items: center;
     margin: 20px;
-    /* margin-top: 20px;
-    margin-bottom: 20px; */
     margin-left: 115px;
     margin-right: 100px;
     border: 8px solid var(--light);
@@ -326,7 +303,6 @@ ol li::before {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 20px;
-    /* background-color: grey; */
 }
 
 input[type=text],

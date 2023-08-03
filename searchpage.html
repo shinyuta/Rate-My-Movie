@@ -1,142 +1,131 @@
 <html lang="en">
-    <!-- added comment -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- we didn't use bootstrap css but for some reason removing this destroys our layout (removed on 8/2) -->
+  <!-- we didn't use bootstrap css but for some reason removing this destroys our layout (removed on 8/2) -->
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel ="stylesheet" href="./searchpage.css"/>
-    <title>Rate My Movie</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./searchpage.css" />
+  <title>Rate My Movie</title>
 </head>
 
 <body>
-    <div class="topnav">
-        <a href="./index.html">Home</a>
-        <!-- <a href="../newsletter/newsletter.html">Newsletter</a> -->
-        <a class="active" href="./searchpage.html">Search</a>
-        
-        <div class = "imagediv">
-          <img id = 'logo' src = "./images/Logo.png">
-        </div>
+  <div class="topnav">
+    <a href="./index.html">Home</a>
+    <a class="active" href="./searchpage.html">Search</a>
 
-        <div class="search-container">
-          <form id = 'form' action="./searchpage.html"> 
-            <!-- action="/action_page.php" -->
-            <input type = 'text' placeholder="Search..." id="search"
-            class="search" name="search">
-            <!-- <button type="button" id="button" onclick="buttonclick()">Submit</button> -->
-            <!-- <button type="submit" id="button"><i class="fa fa-search"></i></button> -->
-          </form>
-        </div>
+    <div class="imagediv">
+      <img id='logo' src="./images/Logo.png">
     </div>
 
-    <div id="filterbutton" onclick="hidebutton()">
-      filters
+    <div class="search-container">
+      <form id='form' action="./searchpage.html">
+        <input type='text' placeholder="Search..." id="search" class="search" name="search">
+      </form>
+    </div>
+  </div>
+
+  <div id="filterbutton" onclick="hidebutton()">
+    filters
+  </div>
+
+  <div id="tags">
+    <div class="tag">Action</div>
+    <div class="tag">Adventure</div>
+    <div class="tag">Drama</div>
+    <div class="tag">Comedy</div>
+  </div>
+
+  <main id="main">
+
+    <div class="movie">
+      <img src="https://thumbs.dreamstime.com/b/
+        movie-slate-film-reel-wood-clapper-wooden-backgorund-36502412.jpg" alt="image">
+
+      <div class="movie-info">
+        <h3>Movie Title</h3>
+        <span class="green">9.8</span>
+      </div>
+
+      <div class="overview">
+        <h3>Overview</h3>
+        Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Impedit, beatae ipsum.
+        Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
+      </div>
     </div>
 
-    <div id="tags">
-      <div class="tag">Action</div>
-      <div class="tag">Adventure</div>
-      <div class="tag">Drama</div>
-      <div class="tag">Comedy</div>
+    <div class="movie">
+      <img src="https://thumbs.dreamstime.com/b/
+        movie-slate-film-reel-wood-clapper-wooden-backgorund-36502412.jpg" alt="image">
+
+      <div class="movie-info">
+        <h3>Movie Title</h3>
+        <span class="green">9.8</span>
+      </div>
+
+      <div class="overview">
+
+        <h3>Overview</h3>
+        Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Impedit, beatae ipsum.
+        Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
+      </div>
     </div>
 
-    <main id="main">
+    <div class="movie">
+      <img src="https://thumbs.dreamstime.com/b/
+        movie-slate-film-reel-wood-clapper-wooden-backgorund-36502412.jpg" alt="image">
 
-      <div class="movie">
-        <img src = "https://thumbs.dreamstime.com/b/
-        movie-slate-film-reel-wood-clapper-wooden-backgorund-36502412.jpg" alt = "image">
-
-        <div class="movie-info">
-          <h3>Movie Title</h3>
-          <span class="green">9.8</span>
-        </div>
-
-        <div class="overview">
-          <h3>Overview</h3>
-          Lorem ipsum dolor sit amet consectetur 
-          adipisicing elit. Impedit, beatae ipsum. 
-          Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
-        </div>
+      <div class="movie-info">
+        <h3>Movie Title</h3>
+        <span class="green">9.8</span>
       </div>
 
-      <div class="movie">
-        <img src = "https://thumbs.dreamstime.com/b/
-        movie-slate-film-reel-wood-clapper-wooden-backgorund-36502412.jpg" alt = "image">
+      <div class="overview">
+        <h3>Overview</h3>
+        Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Impedit, beatae ipsum.
+        Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
+      </div>
+    </div>
 
-        <div class="movie-info">
-          <h3>Movie Title</h3>
-          <span class="green">9.8</span>
-        </div>
+    <div class="movie">
+      <img src="https://thumbs.dreamstime.com/b/
+        movie-slate-film-reel-wood-clapper-wooden-backgorund-36502412.jpg" alt="image">
 
-        <div class="overview">
-
-          <h3>Overview</h3>
-          Lorem ipsum dolor sit amet consectetur 
-          adipisicing elit. Impedit, beatae ipsum. 
-          Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
-        </div>
+      <div class="movie-info">
+        <h3>Movie Title</h3>
+        <span class="green">9.8</span>
       </div>
 
-      <div class="movie">
-        <img src = "https://thumbs.dreamstime.com/b/
-        movie-slate-film-reel-wood-clapper-wooden-backgorund-36502412.jpg" alt = "image">
-
-        <div class="movie-info">
-          <h3>Movie Title</h3>
-          <span class="green">9.8</span>
-        </div>
-
-        <div class="overview">
-          <h3>Overview</h3>
-          Lorem ipsum dolor sit amet consectetur 
-          adipisicing elit. Impedit, beatae ipsum. 
-          Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
-        </div>
+      <div class="overview">
+        <h3>Overview</h3>
+        Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Impedit, beatae ipsum.
+        Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
       </div>
-      
-      <div class="movie">
-        <img src = "https://thumbs.dreamstime.com/b/
-        movie-slate-film-reel-wood-clapper-wooden-backgorund-36502412.jpg" alt = "image">
+    </div>
 
-        <div class="movie-info">
-          <h3>Movie Title</h3>
-          <span class="green">9.8</span>
-        </div>
+  </main>
 
-        <div class="overview">
-          <h3>Overview</h3>
-          Lorem ipsum dolor sit amet consectetur 
-          adipisicing elit. Impedit, beatae ipsum. 
-          Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
-        </div>
-      </div>
-
-    </main>
-
-    <footer>
-      <div id="Links">
-          <!-- <p>Links</p>
-              We want a contact list w socials and email/PN -->
-              <ul id = "footerlist">
-                  <li> <a href="link">Feedback</a></li>
-                  <!-- This is a link to email us  -->
-                  <li><a href="mailto:ratemymoviee@gmail.com">Send an Email</a></li>
-                  <!-- This is a google maps link for search capabilities in locating a theater nearby for the user -->
-                  <li><a href="https://www.google.com/maps/" target="_blank">Find a Theater</a></li>
-                  <!-- Search bar should be a universal search engine for the page  -->
-              </ul>
-          </div>
-          <div id = "LogoCopy"></div>
-              <p>RateMyMovie™</p>
-      <!-- Name of the complany and the copyright -->
-      </div>
-    </footer>
+  <footer>
+    <div id="Links">
+      <ul id="footerlist">
+        <li> <a href="link">Feedback</a></li>
+        <li><a href="mailto:ratemymoviee@gmail.com">Send an Email</a></li>
+        <li><a href="https://www.google.com/maps/" target="_blank">Find a Theater</a></li>
+      </ul>
+    </div>
+    <div id="LogoCopy"></div>
+    <p>RateMyMovie™</p>
+    </div>
+  </footer>
 
   <script src="./searchpage.js"></script>
 </body>
 
 </html>
-
