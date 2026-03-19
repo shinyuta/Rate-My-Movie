@@ -22,14 +22,28 @@
     </div>
 
     <div class="search-container">
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor" d="M21 12.79A9 9 0 0 1 11.21 3a7 7 0 1 0 9.79 9.79Z" />
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor"
+            d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-16a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 18a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Zm10-9a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM4 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm14.95-7.95a1 1 0 0 1 0 1.41l-.7.7a1 1 0 1 1-1.41-1.41l.7-.7a1 1 0 0 1 1.41 0ZM6.16 17.84a1 1 0 0 1 0 1.41l-.7.7a1 1 0 0 1-1.41-1.41l.7-.7a1 1 0 0 1 1.41 0Zm12.79 1.41a1 1 0 0 1-1.41 0l-.7-.7a1 1 0 1 1 1.41-1.41l.7.7a1 1 0 0 1 0 1.41ZM5.46 6.16a1 1 0 0 1-1.41 0l-.7-.7A1 1 0 1 1 4.76 4.05l.7.7a1 1 0 0 1 0 1.41Z" />
+        </svg>
+      </button>
       <form id='form' action="./searchpage.html">
         <input type='text' placeholder="Search..." id="search" class="search" name="search">
       </form>
     </div>
   </div>
 
-  <div id="filterbutton" onclick="hidebutton()">
-    filters
+  <div id="controls-row">
+    <div id="filterbutton" onclick="hidebutton()">
+      Filters
+    </div>
+    <button id="sortbutton" type="button">
+      Sort: Default
+    </button>
   </div>
 
   <div id="tags">
@@ -116,7 +130,7 @@
     <div id="Links">
       <ul id="footerlist">
         <li> <a href="link">Feedback</a></li>
-        <li><a href="mailto:ratemymoviee@gmail.com">Send an Email</a></li>
+        <li><a href="mailto:ratemymoviee@gmail.com">Send an email</a></li>
         <li><a href="https://www.google.com/maps/" target="_blank">Find a Theater</a></li>
       </ul>
     </div>
@@ -126,6 +140,7 @@
   </footer>
 
   <script src="./searchpage.js"></script>
+  <script src="./theme-switch.js"></script>
 </body>
 
 </html>

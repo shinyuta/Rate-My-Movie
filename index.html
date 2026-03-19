@@ -21,6 +21,16 @@
         </div>
 
         <div class="search-container">
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                    <path fill="currentColor"
+                        d="M21 12.79A9 9 0 0 1 11.21 3a7 7 0 1 0 9.79 9.79Z" />
+                </svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                    <path fill="currentColor"
+                        d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-16a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 18a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Zm10-9a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM4 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm14.95-7.95a1 1 0 0 1 0 1.41l-.7.7a1 1 0 1 1-1.41-1.41l.7-.7a1 1 0 0 1 1.41 0ZM6.16 17.84a1 1 0 0 1 0 1.41l-.7.7a1 1 0 0 1-1.41-1.41l.7-.7a1 1 0 0 1 1.41 0Zm12.79 1.41a1 1 0 0 1-1.41 0l-.7-.7a1 1 0 1 1 1.41-1.41l.7.7a1 1 0 0 1 0 1.41ZM5.46 6.16a1 1 0 0 1-1.41 0l-.7-.7A1 1 0 1 1 4.76 4.05l.7.7a1 1 0 0 1 0 1.41Z" />
+                </svg>
+            </button>
             <form id='form' action="./searchpage.html">
                 <input type='text' placeholder="Search..." id="search" class="search" name="search">
             </form>
@@ -54,18 +64,9 @@
             <img class="About-Us" src="./images/week.png">
         </div>
         <div class="text">
-            <h1 class='aboutus-text'>The week of 7/24/23</h1>
-            <h5>This week we are focusing our efforts towards two very well directed films.</h5>
-            <p> It only feels right that they are both mentioned together. With that being said if you haven't heard
-                already,
-                the new <em><a class="github" href="https://www.imdb.com/title/tt1517268/">Barbie</a></em> & <em><a
-                        class="github" href="https://www.imdb.com/title/tt15398776/">Oppenheimer</a></em>
-                films are out in theatres all around the world.
-                <em><a class="github" href="https://www.imdb.com/title/tt1517268/">Barbie</a></em> itself has already
-                been named the box
-                office's highest selling movie for it's release day. Both films deserve credit where is due, so don't
-                let this sway your decision and go see them both while you can!
-            </p>
+            <h1 id="weekly-date-title" class='aboutus-text'>The week of ...</h1>
+            <h5 id="weekly-subtitle">Loading this week's highlights...</h5>
+            <p id="weekly-description">Fetching trending movie descriptions.</p>
         </div>
     </div>
 
@@ -77,19 +78,9 @@
             <h1 class='aboutus-text'>Top 10 Movies for the Week</h1>
             <h5>Check out the top 10 movies of the week!</h5>
             <div class="text-list">
-                <ol class="ol-movie">
-                    <li>Barbie</li>
-                    <li>Oppenheimer</li>
-                    <li>Zombieland</li>
-                    <li>Alpha Dog</li>
-                    <li>Lords of Dogtown</li>
-
-                    <li>Office Space</li>
-                    <li>Mean Girls</li>
-                    <li>Ace Ventura: Pet Detective</li>
-                    <li>The Big Lebowski</li>
-                    <li>Grandma's Boy</li>
-                </ol>
+                <ol id="top10-weekly-list" class="ol-movie">
+                    <li>Loading weekly top 10...</li>
+S                </ol>
             </div>
         </div>
     </div>
@@ -100,30 +91,8 @@
         </div>
         <div class="text">
             <h1 class='aboutus-text'>Upcoming movies to lookout for</h1>
-            <h5>With two phenomenal movies out at the same time</h5>
-            <p> It's going to take some great production and advertising
-                to top the following weeks' (to months) charts in cinema.
-            </p>
-            <p>
-                There are quite a few contenders,
-            </p>
-            <p>
-                as a new <em><a class="github" href="https://www.imdb.com/title/tt6166392/">Willy Wonka (Wonka)</a></em>
-                movie starring the beloved <em><a class="github" href="https://www.imdb.com/name/nm3154303/">Timothy
-                        Chalamet</a></em> is on the horizon.
-            </p>
-            <p>
-                A new <em><a class="github" href="https://www.imdb.com/title/tt8589698/?ref_=rlm">Teenage Mutant Ninja
-                        turtles</a></em> is also on the way.
-            </p>
-            <p>
-                And some other movies to look out in another <em><a class="github"
-                        href="https://www.imdb.com/title/tt12921446/">Exorcist</a></em> installment,
-                a couple <em><a class="github"
-                        href="https://www.imdb.com/search/title/?companies=co0051941">Marvel</a></em> Sequels,
-                <em><a class="github" href="https://www.imdb.com/title/tt1695843/">Haunted Mansion</a></em>, and quite a
-                few more family/action/horror films.
-            </p>
+            <h5 id="upcoming-subtitle">Loading upcoming movie highlights...</h5>
+            <p id="upcoming-description">Fetching upcoming movie descriptions.</p>
         </div>
     </div>
 
@@ -135,7 +104,7 @@
                 <p>Easily keep up to date with what the new week holds insight</p>
 
             </div>
-            <div class="containerNews" style="background-color:white">
+            <div class="containerNews">
                 <input type="text" placeholder="Name" name="name" required>
                 <input type="text" placeholder="Email address" name="mail" required>
                 <label>
@@ -150,14 +119,15 @@
         </form>
     </div>
 
-    <link src="./script.js">
+    <script src="./script.js"></script>
+    <script src="./theme-switch.js"></script>
 
     <footer>
         <div id="Links">
             <ul id="footerlist">
                 <li> <a href="link">Feedback</a></li>
-                <li><a href="mailto:ratemymoviee@gmail.com">Send email</a></li>
-                <li><a href="https://www.google.com/maps/" target="_blank">Find Theater</a></li>
+                <li><a href="mailto:ratemymoviee@gmail.com">Send an email</a></li>
+                <li><a href="https://www.google.com/maps/" target="_blank">Find a Theater</a></li>
             </ul>
         </div>
         <div id="LogoCopy"></div>

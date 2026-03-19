@@ -1,12 +1,45 @@
 :root {
-    --Main: #5A5A5A;
-    --offwhite: #FAF9F6;
-    --white: white;
-    --light: rgb(189, 189, 189);
+    --Main: #0f172a; /* header/footer surface */
+    --offwhite: #e5e7eb; /* main text */
+    --white: #ffffff;
+    --light: rgba(148, 163, 184, 0.35); /* borders/dividers */
+    --muted: rgba(229, 231, 235, 0.75);
+
+    --page-bg: #070a10;
+    --panel-bg: rgba(255, 255, 255, 0.03);
+    --panel-bg-2: rgba(255, 255, 255, 0.12);
+    --panel-bg-3: rgba(255, 255, 255, 0.18);
+    --input-bg: rgba(255, 255, 255, 0.03);
+    --input-border: rgba(148, 163, 184, 0.45);
+    --input-border-soft: rgba(148, 163, 184, 0.35);
+    --search-btn-bg: rgba(255, 255, 255, 0.12);
+    --search-btn-hover-bg: rgba(255, 255, 255, 0.18);
+    --placeholder-color: rgba(229, 231, 235, 0.6);
+    --footer-shadow: 0 -10px 30px rgba(0, 0, 0, 0.25);
+}
+
+body[data-theme="light"] {
+    --Main: #f8fafc;
+    --offwhite: #0f172a;
+    --white: #ffffff;
+    --light: rgba(15, 23, 42, 0.15);
+    --muted: rgba(15, 23, 42, 0.65);
+
+    --page-bg: #ffffff;
+    --panel-bg: rgba(15, 23, 42, 0.03);
+    --panel-bg-2: rgba(15, 23, 42, 0.06);
+    --panel-bg-3: rgba(15, 23, 42, 0.1);
+    --input-bg: rgba(15, 23, 42, 0.03);
+    --input-border: rgba(15, 23, 42, 0.18);
+    --input-border-soft: rgba(15, 23, 42, 0.12);
+    --search-btn-bg: rgba(15, 23, 42, 0.06);
+    --search-btn-hover-bg: rgba(15, 23, 42, 0.1);
+    --placeholder-color: rgba(15, 23, 42, 0.55);
+    --footer-shadow: 0 -10px 30px rgba(15, 23, 42, 0.08);
 }
 
 * {
-    margin: 0, auto;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -15,6 +48,10 @@ body {
     min-height: 400px;
     margin-bottom: 100px;
     clear: both;
+    background: var(--page-bg);
+    color: var(--offwhite);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
 }
 
 #titlelogo {
@@ -28,26 +65,41 @@ ul li {
 }
 
 footer {
-    padding-top: 15px;
+    padding: 12px 16px 14px;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: var(--Main);
-    color: var(--white);
+    color: var(--offwhite);
     text-align: center;
-    border-top: 8px solid var(--light);
+    border-top: 1px solid var(--light);
+    box-shadow: var(--footer-shadow);
+    backdrop-filter: blur(6px);
+    z-index: 20;
 }
 
 .imagediv {
-    width: 100%;
+    /* Let the logo participate in the flex header layout */
+    width: auto;
     text-align: center;
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     pointer-events: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
 }
 
 #logo {
-    text-align: center;
+    display: block;
+    height: 40px;
+    width: auto;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 @media all and (max-width: 824px) {
@@ -63,53 +115,118 @@ img {
 .About-Us {
     max-height: 500px;
     max-width: 225px;
+    width: 225px;
     background-color: var(--Main);
-    padding: 20px;
-    border-radius: 30px;
+    padding: 16px;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.container .img {
+    /* Fixed left column so all index cards align */
+    flex: 0 0 225px;
+    display: flex;
+    justify-content: center;
 }
 
 
 #footerlist li {
-    padding-left: 10px;
-    padding-right: 10px;
-    display: inline;
+    padding: 0;
+    display: inline-flex;
     text-align: center;
     text-decoration: none;
 }
 
 #footerlist li a {
     text-decoration: none;
-    color: var(--white);
+    color: var(--offwhite);
+    font-weight: 500;
+    padding: 2px 4px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#footerlist li a:hover,
+#footerlist li a:focus-visible {
+    color: var(--offwhite);
+    background-color: var(--panel-bg-2);
+    text-decoration: none;
+    outline: none;
+}
+
+#footerlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 0 0 6px;
+    padding: 0;
+    list-style: none;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--muted);
 }
 
 .container {
-    margin-top: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    margin: 20px auto;
+    padding: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 8px solid var(--light);
-    border-radius: 20px;
+    gap: 40px;
+    border: 1px solid var(--light);
+    border-radius: 16px;
+    background: var(--panel-bg);
+    max-width: 1100px;
+    width: min(1100px, 92vw);
 }
 
 .aboutus-text {
     font-weight: bold;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+    color: var(--offwhite);
 }
 
 .text {
-    padding-left: 70px;
+    padding-left: 0;
 }
 
 .text-list {
-    padding-top: 10px;
-    padding-left: 20px;
+    padding-top: 12px;
+    padding-left: 0;
     align-items: center;
+}
+
+.container h5 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--muted);
+}
+
+.container p {
+    margin-bottom: 14px;
+    color: var(--offwhite);
+    max-width: 70ch;
+}
+
+.container p:last-child {
+    margin-bottom: 0;
 }
 
 @media all and (max-width: 824px) {
     .container .About-Us {
+        display: none;
+    }
+
+    .container .img {
         display: none;
     }
 
@@ -123,51 +240,80 @@ img {
 }
 
 .topnav {
+    /* Fixed-height header so its size doesn't change with surrounding content */
+    box-sizing: border-box;
+    height: 60px;
     overflow: hidden;
     background-color: var(--Main);
-    border-bottom: 8px solid var(--light);
+    border-bottom: 1px solid var(--light);
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
 }
 
 .topnav a {
-    float: left;
-    display: block;
-    color: var(--white);
+    float: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: var(--offwhite);
     text-align: center;
-    padding: 14px 16px;
+    padding: 0 16px;
     text-decoration: none;
     font-size: 17px;
 }
 
 .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: var(--panel-bg-2);
+    color: var(--offwhite);
 }
 
 .topnav a.active {
     background-color: var(--light);
-    color: black;
+    color: var(--offwhite);
 }
 
 .topnav .search-container {
-    float: right;
+    float: none;
+    margin-left: auto;
     margin-right: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.topnav .search-container form {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .topnav input[type=text] {
-    padding: 6px;
-    margin-top: 8px;
+    box-sizing: border-box;
+    margin: 0;
+    height: 34px;
+    padding: 0 12px;
     font-size: 17px;
-    border: none;
+    line-height: 34px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--offwhite);
 }
 
 .topnav .search-container button {
-    float: right;
-    padding: 6px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
+    float: none;
+    margin: 0 16px 0 0;
+    padding: 0 12px;
+    height: 34px;
+    background: var(--search-btn-bg);
+    color: var(--offwhite);
     font-size: 17px;
-    border: none;
+    border: 1px solid var(--input-border);
     cursor: pointer;
 }
 
@@ -179,27 +325,72 @@ img {
 
 
 .topnav .search-container button:hover {
-    background: #ccc;
+    background: var(--search-btn-hover-bg);
+}
+
+.theme-toggle {
+    /* Override the generic header button styling to keep it circular */
+    margin: 0;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--offwhite);
+    background: var(--panel-bg-2);
+    border: 1px solid var(--input-border-soft);
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    background: var(--panel-bg-3);
+}
+
+.theme-toggle svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+body[data-theme="light"] .icon-moon {
+    display: none;
+}
+
+body[data-theme="light"] .theme-toggle .icon-sun {
+    display: block;
+}
+
+/* Ensure the "dark" default wins over the generic `.theme-toggle svg { display:block; }` */
+body[data-theme="dark"] .theme-toggle .icon-sun {
+    display: none;
+}
+
+body[data-theme="light"] .theme-toggle {
+    color: var(--offwhite);
 }
 
 
-.topnav input[type=text] {
-    border: 1px solid #ccc;
-}
+/* input[type=text] border is set above for consistent header sizing */
 
 .github {
     text-decoration: none;
-    color: black;
-    font-weight: bold;
+    color: var(--offwhite);
+    font-weight: 600;
 }
 
 .github:hover {
-    text-decoration: none;
-    color: var(--light);
+    text-decoration: underline;
+    color: var(--offwhite);
 }
 
 .github-button-div {
-    padding-top: 20px;
+    padding-top: 10px;
     text-align: center;
 }
 
@@ -208,14 +399,16 @@ img {
     color: var(--offwhite);
     font-weight: bold;
     background-color: var(--Main);
-    padding: 10px;
+    padding: 10px 16px;
     border-radius: 20px;
     text-align: center;
+    border: 1px solid var(--input-border-soft);
 }
 
 .github-button:hover {
     text-decoration: none;
-    color: var(--light);
+    color: var(--offwhite);
+    background-color: var(--panel-bg-2);
 }
 
 .week {
@@ -232,16 +425,28 @@ img {
 }
 
 @media screen and (max-width: 600px) {
+    .topnav {
+        height: auto;
+        display: block;
+    }
 
     .topnav a,
     .topnav input[type=text],
-    .topnav .search-container button {
+    .topnav .search-container button:not(.theme-toggle) {
         float: none;
         display: block;
+        height: auto;
         text-align: left;
         width: 100%;
         margin: 0;
         padding: 14px;
+    }
+
+    .topnav .search-container {
+        margin-left: 0;
+        margin-right: 0;
+        height: auto;
+        display: block;
     }
 
     .search-container {
@@ -249,9 +454,7 @@ img {
     }
 }
 
-.topnav input[type=text] {
-    border: 1px solid #ccc;
-}
+/* input[type=text] border is set above for consistent header sizing */
 
 ol {
     list-style: none;
@@ -287,11 +490,12 @@ ol li::before {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 20px;
-    margin-left: 115px;
-    margin-right: 100px;
-    border: 8px solid var(--light);
-    border-radius: 20px;
+    margin: 20px auto;
+    width: min(1100px, 92vw);
+    border: 1px solid var(--light);
+    border-radius: 16px;
+    background: var(--panel-bg);
+    padding: 16px;
     
     
 }
@@ -303,6 +507,9 @@ ol li::before {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 input[type=text],
@@ -313,15 +520,42 @@ input[type=submit] {
     display: inline-block;
     border: 2px solid var(--light);
     box-sizing: border-box;
-    border-radius: px;
+    border-radius: 14px;
     align-items: center;
     justify-content: center;
 
 }
 
-input[type=checkbox] {
-    margin-top: 15px;
+input[type=text] {
+    background: var(--input-bg);
+    color: var(--offwhite);
+}
 
+input[type=text]::placeholder {
+    color: var(--placeholder-color);
+}
+
+input[type=checkbox] {
+    margin: 0;
+}
+
+/* Checkbox row inside the weekly newsletter card */
+#newsletterBox.containerNews {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: transparent;
+    border-radius: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+#newsletterBox.containerNews input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
 }
 
 input[type=submit] {
@@ -329,8 +563,8 @@ input[type=submit] {
     align-items: center;
     justify-content: center;
     background-color: var(--Main);
-    color: white;
-    border: none;
+    color: var(--offwhite);
+    border: 1px solid var(--input-border-soft);
     align-items: center;
     justify-content: center;
     border-radius: 20px;

@@ -88,10 +88,16 @@ const genres = [
 const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
-const button = document.getElementById('button');
 const tagsEl = document.getElementById('tags');
+const sortButton = document.getElementById('sortbutton');
 
-var selectgenre = []
+let selectedGenres = [];
+let currentSearchTerm = '';
+let currentPage = 1;
+let totalPages = 1;
+let isLoading = false;
+let allMovies = [];
+let sortMode = 'default';
 
 setgenre();
 
@@ -99,77 +105,184 @@ function setgenre() {
   tagsEl.innerHTML = '';
   genres.forEach(genre => {
     const t = document.createElement('div');
-    t.classList.add('tag')
+    t.classList.add('tag');
     t.id = genre.id;
     t.innerText = genre.name;
     t.addEventListener('click', () => {
-      if (selectgenre.length == 0) {
-        selectgenre.push(genre.id);
+      if (selectedGenres.length === 0) {
+        selectedGenres.push(genre.id);
       } else {
-        if (selectgenre.includes(genre.id)) {
-          selectgenre.forEach((id, idx) => {
-            if (id == genre.id) {
-              selectgenre.splice(idx, 1);
+        if (selectedGenres.includes(genre.id)) {
+          selectedGenres.forEach((id, idx) => {
+            if (id === genre.id) {
+              selectedGenres.splice(idx, 1);
             }
-          })
+          });
         } else {
-          selectgenre.push(genre.id);
+          selectedGenres.push(genre.id);
         }
       }
-      console.log(selectgenre);
-      fetchMovies(API_URL + '&with_genres=' + encodeURI(selectgenre.join(',')));
       genreHighlight();
-    })
+      reloadMovies();
+    });
     tagsEl.append(t);
-  })
+  });
 }
 
 function genreHighlight() {
   const tags = document.querySelectorAll('.tag');
   tags.forEach(tag => {
-    tag.classList.remove('highlight')
-  })
+    tag.classList.remove('highlight');
+  });
   clearbutton();
-  if (selectgenre.length != 0) {
-    selectgenre.forEach(id => {
+  if (selectedGenres.length !== 0) {
+    selectedGenres.forEach(id => {
       const highlightedtag = document.getElementById(id);
       highlightedtag.classList.add('highlight');
-    })
+    });
   }
 }
 
 function clearbutton() {
-  let clearbutton = document.getElementById('clear');
-  if (clearbutton) {
-    clearbutton.classList.add('highlight');
-  } else {
+  const existingClear = document.getElementById('clear');
+  if (selectedGenres.length === 0) {
+    if (existingClear) existingClear.remove();
+    return;
+  }
+
+  if (!existingClear) {
     let clear = document.createElement('div');
     clear.classList.add('tag', 'highlight');
     clear.id = 'clear';
     clear.innerText = 'Clear x';
     clear.addEventListener('click', () => {
-      selectgenre = [];
+      selectedGenres = [];
       setgenre();
-      fetchMovies(API_URL);
-    })
+      genreHighlight();
+      reloadMovies();
+    });
     tagsEl.append(clear);
   }
 }
 
-fetchMovies(API_URL)
-function fetchMovies(url) {
-  fetch(url).then(res => res.json()).then(data => {
-    if (data.results.length != 0) {
-      showMovies(data.results);
-    } else {
-      main.innerHTML = `<h1 class ='noresults'> No Results Were Found :( </h1>`
-    }
-  })
+function buildUrl(page) {
+  const pageParam = `&page=${page}`;
+  if (currentSearchTerm) {
+    return `${searchURL}&query=${encodeURIComponent(currentSearchTerm)}${pageParam}`;
+  }
+
+  if (selectedGenres.length !== 0) {
+    return `${API_URL}&with_genres=${encodeURIComponent(selectedGenres.join(','))}${pageParam}`;
+  }
+
+  return `${API_URL}${pageParam}`;
 }
 
-function showMovies(data) {
+function matchesSelectedGenres(movie) {
+  if (selectedGenres.length === 0) return true;
+  if (!movie.genre_ids || !Array.isArray(movie.genre_ids)) return false;
+  return movie.genre_ids.some(id => selectedGenres.includes(id));
+}
+
+function updateSortButtonLabel() {
+  if (!sortButton) return;
+  if (sortMode === 'highest') {
+    sortButton.innerText = 'Sort: Highest';
+  } else if (sortMode === 'lowest') {
+    sortButton.innerText = 'Sort: Lowest';
+  } else {
+    sortButton.innerText = 'Sort: Default';
+  }
+}
+
+function getSortedMovies(movies) {
+  const sorted = [...movies];
+  if (sortMode === 'highest') {
+    sorted.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0));
+  } else if (sortMode === 'lowest') {
+    sorted.sort((a, b) => (a.vote_average || 0) - (b.vote_average || 0));
+  }
+  return sorted;
+}
+
+function mergeMovies(movies) {
+  const existingIds = new Set(allMovies.map(movie => movie.id));
+  movies.forEach(movie => {
+    if (!existingIds.has(movie.id)) {
+      allMovies.push(movie);
+      existingIds.add(movie.id);
+    }
+  });
+}
+
+async function fetchMovies(reset = false) {
+  if (isLoading) return;
+  if (!reset && currentPage > totalPages) return;
+
+  if (reset) {
+    currentPage = 1;
+    totalPages = 1;
+    allMovies = [];
+    main.innerHTML = '';
+  }
+
+  isLoading = true;
+
+  try {
+    let pageResults = [];
+    let reachedEnd = false;
+
+    while (pageResults.length === 0 && !reachedEnd) {
+      if (currentPage > totalPages) {
+        reachedEnd = true;
+        break;
+      }
+
+      const response = await fetch(buildUrl(currentPage));
+      const data = await response.json();
+
+      totalPages = data.total_pages || 1;
+      pageResults = data.results || [];
+
+      // TMDB search endpoint does not support with_genres, so filter client-side.
+      if (currentSearchTerm && selectedGenres.length !== 0) {
+        pageResults = pageResults.filter(matchesSelectedGenres);
+      }
+
+      currentPage += 1;
+      if (currentPage > totalPages && pageResults.length === 0) {
+        reachedEnd = true;
+      }
+    }
+
+    if (pageResults.length !== 0) {
+      mergeMovies(pageResults);
+      renderMovies();
+      return;
+    }
+
+    if (allMovies.length === 0) {
+      main.innerHTML = `<h1 class='noresults'>No Results Were Found :(</h1>`;
+    }
+  } catch (err) {
+    if (allMovies.length === 0) {
+      main.innerHTML = `<h1 class='noresults'>Something went wrong loading movies.</h1>`;
+    }
+  } finally {
+    isLoading = false;
+  }
+}
+
+function renderMovies() {
+  const sortedMovies = getSortedMovies(allMovies);
   main.innerHTML = '';
-  data.forEach(movie => {
+
+  if (sortedMovies.length === 0) {
+    main.innerHTML = `<h1 class='noresults'>No Results Were Found :(</h1>`;
+    return;
+  }
+
+  sortedMovies.forEach(movie => {
     const { title, poster_path, vote_average, overview } = movie;
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
@@ -182,32 +295,54 @@ function showMovies(data) {
       </div>
       <div class="overview">
         <h3>Overview</h3>
-        ${overview}
+        ${overview || 'No overview available.'}
       </div>
-    `
+    `;
     main.appendChild(movieEl);
-  })
+  });
 }
 
 function getColor(vote) {
   if (vote >= 8) {
-    return 'green'
+    return 'green';
   } else if (vote >= 5) {
-    return 'orange'
+    return 'orange';
   } else {
-    return 'red'
+    return 'red';
   }
 }
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const searchterm = search.value;
-  selectgenre = [];
-  genreHighlight();
-  if (searchterm) {
-    fetchMovies(searchURL + '&query=' + searchterm);
+  currentSearchTerm = search.value.trim();
+  reloadMovies();
+});
+
+if (sortButton) {
+  sortButton.addEventListener('click', () => {
+    if (sortMode === 'default') {
+      sortMode = 'highest';
+    } else if (sortMode === 'highest') {
+      sortMode = 'lowest';
+    } else {
+      sortMode = 'default';
+    }
+    updateSortButtonLabel();
+    renderMovies();
+  });
+}
+
+window.addEventListener('scroll', () => {
+  const nearBottom =
+    window.innerHeight + window.scrollY >= document.body.offsetHeight - 400;
+  if (nearBottom) {
+    fetchMovies(false);
   }
-})
+});
+
+function reloadMovies() {
+  fetchMovies(true);
+}
 
 function hidebutton() {
   var x = document.getElementById("tags");
@@ -217,3 +352,6 @@ function hidebutton() {
     x.style.display = "none";
   }
 }
+
+updateSortButtonLabel();
+reloadMovies();
