@@ -1,24 +1,54 @@
-# Rate My Movie Web App (Project #1 - 7/20/23)
+# Rate My Movie
 
-## Description
-This project was created for project #1 in the UofMN fullstack coding bootcamp (Summer 2023).
+A movie discovery web app built for Project #1 in the University of Minnesota Full-Stack Coding Bootcamp (Summer 2023).
 
-Our names are Yuta Kirihara and Taylor Brown and we created this application in order to make it easy to search for movies via different genres and ratings.
+Rate My Movie helps users quickly browse and search films with filtering options such as genre and rating. The app uses TMDB (The Movie Database) to display up-to-date movie details including titles, posters, overviews, and ratings.
 
-We used the API TMDB (The Movie Database) in order to retrieve movie information including movie name, ratings, posters, etc.
+## Features
+
+- Browse trending and featured movie content from TMDB
+- Search for movies with filter options (for example, genre and rating)
+- View key movie information in a simple, responsive interface
+- Switch between light and dark themes
+
+## Built With
+
+- HTML
+- CSS
+- JavaScript
+- [TMDB API](https://www.themoviedb.org/documentation/api)
 
 ## Installation
 
-N/A
+No installation is required.
+
+1. Clone this repository.
+2. Open `index.html` in your browser.
 
 ## Usage
 
-The usage of this web app is to search for movies using different filters as well as being able to read the homepage for information on relevant movies.
+1. Open the homepage to view movie highlights.
+2. Navigate to the search view to find movies by your preferred filters.
+3. Toggle the theme switcher to choose light or dark mode.
+
+## Screenshots
+
+### Home
+
+![Rate My Movie Home](images/home.png)
+
+### Light Theme
+
+![Rate My Movie Light Theme](images/light.png)
+
+### Dark Theme
+
+![Rate My Movie Dark Theme](images/dark.png)
 
 ## Credits
 
-N/A
+Created by Yuta Kirihara and Taylor Brown.
 
 ## License
 
-MIT License. Please refer to the LICENSE in the repo.
+MIT License. See `LICENSE` for details.
